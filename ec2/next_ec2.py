@@ -24,7 +24,6 @@
 
 from __future__ import with_statement
 
-import hashlib
 import logging
 import os
 import pipes
@@ -33,15 +32,12 @@ import shutil
 import string
 import subprocess
 import sys
-import tarfile
 import tempfile
 import textwrap
 import time
-import urllib2
-import warnings
 from datetime import datetime
 from optparse import OptionParser
-from sys import stderr, version_info
+from sys import stderr
 
 """
 # launch a new cluster of instance type "c3.8xlarge" (see http://www.ec2instances.info or below for other choices)
