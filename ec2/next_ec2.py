@@ -38,6 +38,12 @@ import time
 from datetime import datetime
 from optparse import OptionParser
 from sys import stderr
+import boto
+from boto.ec2.blockdevicemapping import (
+    BlockDeviceMapping,
+    EBSBlockDeviceType
+)
+from boto import ec2
 
 """
 # launch a new cluster of instance type "c3.8xlarge" (see http://www.ec2instances.info or below for other choices)
@@ -86,10 +92,6 @@ DEFAULT_REGION = 'us-west-2'
 DEFAULT_AMI = 'ami-9abea4fb'  # Ubuntu Server 14.04 LTS
 DEFAULT_USER = 'ubuntu'
 DEFAULT_INSTANCE_TYPE = 'm3.large'
-
-import boto
-from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType, EBSBlockDeviceType
-from boto import ec2
 
 
 class UsageError(Exception):
